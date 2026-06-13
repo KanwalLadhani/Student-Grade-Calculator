@@ -382,11 +382,12 @@ public class GradeApp extends JFrame {
                 int x      = padL + i * spacing + (spacing - barW) / 2;
                 int y      = padT + chartH - barH;
 
-                // Bar color based on grade
+                // Bar color based on letter grade
                 Color barColor;
-                if      (avg >= 80) barColor = SUCCESS;
-                else if (avg >= 60) barColor = WARNING;
-                else                barColor = DANGER;
+                String letter = s.getLetterGrade();
+                if      (letter.equals("A"))                              barColor = SUCCESS;
+                else if (letter.equals("B") || letter.equals("C"))       barColor = WARNING;
+                else                                                      barColor = DANGER;
 
                 // Draw bar with rounded top
                 g2.setColor(new Color(barColor.getRed(), barColor.getGreen(), barColor.getBlue(), 180));
