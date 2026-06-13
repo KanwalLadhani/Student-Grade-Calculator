@@ -3,3 +3,6 @@
 *.class
 out/
 students.txt
+*.jpeg
+*.jpg
+*.png
